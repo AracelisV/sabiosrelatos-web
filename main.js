@@ -21,12 +21,23 @@ document.querySelectorAll('.toggle button').forEach(btn => {
   });
 });
 
-// Formulario (demo: falta conectar a un servicio real)
+// Formulario (Netlify Forms)
 const form = document.querySelector('.signup');
-form.addEventListener('submit', () => {
-  const msg = document.querySelector('.form-msg');
-  msg.textContent = '¡Gracias! Te avisaremos pronto.';
-  form.reset();
+const msg = document.querySelector('.form-msg');
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  try {
+    const res = await fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(new FormData(form)).toString(),
+    });
+    if (!res.ok) throw new Error();
+    msg.textContent = '¡Gracias! Te avisaremos pronto.';
+    form.reset();
+  } catch {
+    msg.textContent = 'No pudimos registrar tu correo. Intenta de nuevo.';
+  }
 });
 
 document.getElementById('year').textContent = new Date().getFullYear();

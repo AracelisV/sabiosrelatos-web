@@ -9,4 +9,4 @@ Para verla localmente basta con abrir `index.html` en el navegador.
 - `main.js` — menú móvil, selector de precios y formulario
 - `assets/` — logo y favicons
 
-Pendiente: conectar el formulario de correo a un servicio real (p. ej. Mailchimp o Formspree) y reemplazar los textos de ejemplo.
+Publicado en Netlify (config en `netlify.toml`). Los correos del formulario se ven en Netlify → Forms → "lista-espera".

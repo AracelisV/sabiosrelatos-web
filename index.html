@@ -303,9 +303,11 @@
       <div class="cta-box">
         <h2>Tu próxima historia empieza hoy</h2>
         <p>Únete a la lista y recibe acceso anticipado a Sabios Relatos.</p>
-        <form class="signup" onsubmit="return false">
+        <form class="signup" name="lista-espera" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="lista-espera">
+          <p class="sr-only"><label>No llenar: <input name="bot-field"></label></p>
           <label class="sr-only" for="email">Correo electrónico</label>
-          <input id="email" type="email" placeholder="tu@correo.cl" required>
+          <input id="email" name="email" type="email" placeholder="tu@correo.cl" required>
           <button type="submit" class="btn btn-primary">Quiero escribir</button>
         </form>
         <p class="form-msg" role="status"></p>
