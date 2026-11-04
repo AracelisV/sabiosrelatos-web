@@ -27,7 +27,7 @@ body {
 img { max-width: 100%; display: block; }
 a { color: var(--navy); }
 h1, h2, h3, h4 { font-family: "League Spartan", sans-serif; color: var(--navy-dark); line-height: 1.1; margin: 0 0 .5em; }
-h1 { font-size: clamp(2.4rem, 5vw, 3.8rem); font-weight: 800; }
+h1 { font-size: clamp(2.2rem, 4.4vw, 3.3rem); font-weight: 800; }
 h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 700; }
 h3 { font-size: 1.3rem; font-weight: 700; }
 p { margin: 0 0 1em; }
@@ -189,4 +189,23 @@ details p { color: var(--muted); padding-bottom: 18px; margin: 0; }
   .nav-links .btn { margin-top: 12px; text-align: center; }
   .mock-body { grid-template-columns: 1fr; }
   .mock-side { display: none; }
+}
+
+/* Mockup: progreso y acciones */
+.mock-progress li { flex-direction: column; align-items: stretch; gap: 4px; padding: 6px; }
+.mock-progress b { display: block; height: 5px; border-radius: 3px; background: linear-gradient(90deg, var(--orange) var(--p), #e3e9ee var(--p)); }
+.mock-actions { display: flex; gap: 8px; flex-wrap: wrap; font-family: "Inter", sans-serif; }
+.chip { font-size: .78rem; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--border); background: var(--sky-soft); color: var(--navy-dark); font-weight: 600; }
+.chip.ok { background: var(--orange); border-color: var(--orange); color: #fff; }
+
+/* Variantes de grilla */
+.steps.steps-4 { grid-template-columns: repeat(4, 1fr); }
+.pricing.pricing-2 { grid-template-columns: repeat(2, minmax(0, 380px)); justify-content: center; }
+.strip b { font-size: 1.2rem; }
+@media (max-width: 900px) {
+  .steps.steps-4 { grid-template-columns: 1fr 1fr; }
+  .pricing.pricing-2 { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .steps.steps-4 { grid-template-columns: 1fr; }
 }

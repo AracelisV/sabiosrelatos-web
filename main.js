@@ -10,17 +10,6 @@ menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
   toggle.setAttribute('aria-expanded', 'false');
 }));
 
-// Precios mensual / anual
-const fmt = n => '$' + Number(n).toLocaleString('es-CL');
-document.querySelectorAll('.toggle button').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.toggle button').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const key = btn.dataset.period === 'anual' ? 'a' : 'm';
-    document.querySelectorAll('.price span').forEach(s => { s.textContent = fmt(s.dataset[key]); });
-  });
-});
-
 // Formulario (Netlify Forms)
 const form = document.querySelector('.signup');
 const msg = document.querySelector('.form-msg');
