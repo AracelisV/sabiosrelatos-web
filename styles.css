@@ -209,3 +209,19 @@ details p { color: var(--muted); padding-bottom: 18px; margin: 0; }
 @media (max-width: 560px) {
   .steps.steps-4 { grid-template-columns: 1fr; }
 }
+
+/* Teléfonos con capturas reales */
+.phones { position: relative; height: 600px; max-width: 520px; margin-inline: auto; width: 100%; }
+.phone { position: absolute; margin: 0; width: 270px; padding: 10px; background: #1d2a36; border-radius: 42px; box-shadow: 0 30px 60px rgba(11, 79, 134, .25); }
+.phone img { width: 100%; height: auto; border-radius: 32px; display: block; }
+.phone-front { left: 0; top: 40px; z-index: 2; transform: rotate(-2deg); }
+.phone-back { right: 0; top: 0; transform: rotate(2deg); }
+@media (max-width: 900px) {
+  .phones { height: 520px; max-width: 440px; }
+  .phone { width: 230px; }
+}
+@media (max-width: 480px) {
+  .phones { height: 420px; }
+  .phone { width: 185px; padding: 7px; border-radius: 30px; }
+  .phone img { border-radius: 24px; }
+}
