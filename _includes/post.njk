@@ -1,0 +1,15 @@
+---
+layout: base.njk
+---
+<article class="section post">
+  <div class="container narrow">
+    <a href="/blog/" class="back-link">← Volver a noticias</a>
+    <p class="post-meta"><time datetime="{{ date | isoFecha }}">{{ date | fecha }}</time>{% if autor %} · {{ autor }}{% endif %}</p>
+    <h1 class="post-title">{{ title }}</h1>
+    {% if resumen %}<p class="lead">{{ resumen }}</p>{% endif %}
+    {% if imagen %}<img class="post-cover" src="{{ imagen }}" alt="">{% endif %}
+    <div class="post-body">
+      {{ content | safe }}
+    </div>
+  </div>
+</article>

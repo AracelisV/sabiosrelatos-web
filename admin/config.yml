@@ -1,0 +1,40 @@
+# Panel de noticias (Decap CMS). Se entra en https://sabiosrelatos.cl/admin
+# Cada noticia publicada se guarda en GitHub (rama main) y Netlify vuelve a publicar el sitio.
+backend:
+  name: github
+  repo: AracelisV/sabiosrelatos-web
+  branch: main
+  commit_messages:
+    create: 'Nueva noticia: {{slug}}'
+    update: 'Actualizar noticia: {{slug}}'
+    delete: 'Eliminar noticia: {{slug}}'
+    uploadMedia: 'Subir imagen: {{path}}'
+    deleteMedia: 'Eliminar imagen: {{path}}'
+
+locale: es
+site_url: https://sabiosrelatos.cl
+display_url: https://sabiosrelatos.cl
+logo_url: /assets/logo.webp
+
+media_folder: assets/blog
+public_folder: /assets/blog
+
+collections:
+  - name: noticias
+    label: Noticias
+    label_singular: Noticia
+    folder: blog/posts
+    create: true
+    slug: '{{slug}}'
+    extension: md
+    format: frontmatter
+    sortable_fields: ['date', 'title']
+    summary: '{{title}} — {{date | date("DD-MM-YYYY")}}'
+    preview_path: 'blog/{{slug}}/'
+    fields:
+      - { label: Título, name: title, widget: string }
+      - { label: Fecha, name: date, widget: datetime, format: 'YYYY-MM-DD', date_format: 'DD-MM-YYYY', time_format: false }
+      - { label: Autor, name: autor, widget: string, default: 'Equipo Sabios Relatos', required: false }
+      - { label: Resumen (aparece en la lista de noticias), name: resumen, widget: text }
+      - { label: Imagen principal, name: imagen, widget: image, required: false }
+      - { label: Contenido, name: body, widget: markdown }

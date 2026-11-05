@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title }} — Sabios Relatos</title>
+  <meta name="description" content="{{ resumen or 'Noticias y novedades de Sabios Relatos.' }}">
+  <link rel="icon" type="image/png" href="/assets/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <meta property="og:title" content="{{ title }}">
+  <meta property="og:description" content="{{ resumen or 'Noticias y novedades de Sabios Relatos.' }}">
+  <meta property="og:image" content="{{ imagen or '/assets/logo.webp' }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;600;700;800&family=Inter:wght@400;500;600&family=Lora:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+<header class="nav" id="top">
+  <div class="container nav-inner">
+    <a href="/" class="brand" aria-label="Sabios Relatos, inicio">
+      <img src="/assets/logo.webp" alt="" width="44" height="44">
+      <span>sabiosrelatos<b>.cl</b></span>
+    </a>
+    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="menu" class="nav-links">
+      <a href="/#la-app">La app</a>
+      <a href="/#como-funciona">Cómo funciona</a>
+      <a href="/#planes">Planes</a>
+      <a href="/blog/">Noticias</a>
+      <a href="/#empezar" class="btn btn-primary btn-sm">Quiero participar</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+{{ content | safe }}
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div>
+      <a href="/" class="brand">
+        <img src="/assets/logo.webp" alt="" width="40" height="40">
+        <span>sabiosrelatos<b>.cl</b></span>
+      </a>
+      <p class="small muted">Ayudamos a personas mayores a convertir sus recuerdos en el libro de su vida.</p>
+    </div>
+    <div>
+      <h4>Sabios Relatos</h4>
+      <a href="/#como-funciona">Cómo funciona</a>
+      <a href="/#planes">Planes</a>
+      <a href="/blog/">Noticias</a>
+      <a href="#">Política de privacidad</a>
+    </div>
+    <div>
+      <h4>Contacto</h4>
+      <a href="mailto:hola@sabiosrelatos.cl">hola@sabiosrelatos.cl</a>
+      <a href="#">WhatsApp</a>
+      <a href="#">Instagram</a>
+    </div>
+  </div>
+  <p class="container small muted copy">© <span id="year">2026</span> Sabios Relatos · Hecho con ❤️ en Chile</p>
+</footer>
+
+<script src="/main.js"></script>
+</body>
+</html>

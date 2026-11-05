@@ -13,7 +13,7 @@ menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
 // Formulario (Netlify Forms)
 const form = document.querySelector('.signup');
 const msg = document.querySelector('.form-msg');
-form.addEventListener('submit', async (e) => {
+if (form) form.addEventListener('submit', async (e) => {
   e.preventDefault();
   try {
     const res = await fetch('/', {
@@ -22,10 +22,10 @@ form.addEventListener('submit', async (e) => {
       body: new URLSearchParams(new FormData(form)).toString(),
     });
     if (!res.ok) throw new Error();
-    msg.textContent = '¡Gracias! Te avisaremos pronto.';
+    msg.textContent = '¡Gracias! Le avisaremos pronto.';
     form.reset();
   } catch {
-    msg.textContent = 'No pudimos registrar tu correo. Intenta de nuevo.';
+    msg.textContent = 'No pudimos registrar su correo. Intente de nuevo.';
   }
 });
 

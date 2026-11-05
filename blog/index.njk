@@ -1,0 +1,31 @@
+---
+layout: base.njk
+title: Noticias
+resumen: Novedades, consejos y avances de Sabios Relatos.
+permalink: /blog/
+---
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Blog</span>
+      <h1 class="h2">Noticias y novedades</h1>
+      <p class="muted">Avances del proyecto, consejos para contar su historia y todo lo nuevo de Sabios Relatos.</p>
+    </div>
+    {% set posts = collections.noticias | reverse %}
+    {% if posts.length %}
+    <div class="grid-3 blog-grid">
+      {% for post in posts %}
+      <a class="card post-card" href="{{ post.url }}">
+        {% if post.data.imagen %}<img src="{{ post.data.imagen }}" alt="" loading="lazy">{% endif %}
+        <p class="post-meta"><time datetime="{{ post.date | isoFecha }}">{{ post.date | fecha }}</time></p>
+        <h2 class="h3">{{ post.data.title }}</h2>
+        <p>{{ post.data.resumen }}</p>
+        <span class="read-more">Leer más →</span>
+      </a>
+      {% endfor %}
+    </div>
+    {% else %}
+    <p class="center muted">Pronto publicaremos nuestras primeras noticias.</p>
+    {% endif %}
+  </div>
+</section>

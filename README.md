@@ -1,12 +1,19 @@
 # sabiosrelatos.cl
 
-Landing page estática (HTML/CSS/JS, sin dependencias).
+Sitio de Sabios Relatos, publicado en Netlify desde la rama `main`.
 
-Para verla localmente basta con abrir `index.html` en el navegador.
+## Estructura
+- `index.html`: página principal
+- `pago.html` + `pago.js`: pantalla de pago (por ahora envía una *solicitud de compra* a Netlify Forms; los precios se editan al inicio de `pago.js`)
+- `blog/posts/*.md`: noticias (una por archivo)
+- `blog/index.njk`, `_includes/`: plantillas del blog
+- `admin/`: panel para escribir noticias desde el navegador (Decap CMS) → https://sabiosrelatos.cl/admin
+- `styles.css`, `main.js`, `assets/`: estilos, código y anexos
 
-- `index.html` — contenido
-- `styles.css` — estilos (colores del logo en `:root`)
-- `main.js` — menú móvil, selector de precios y formulario
-- `assets/` — logo y favicons
+## Cómo se genera
+Netlify ejecuta `npm run build` (Eleventy) y publica la carpeta `_site/`.
+Para verlo localmente: `npm install` y luego `npm run dev`.
 
-Publicado en Netlify (config en `netlify.toml`). Los correos del formulario se ven en Netlify → Forms → "lista-espera".
+## Formularios (Netlify → Forms)
+- `lista-espera`: correos de interesados
+- `solicitud-compra`: solicitudes desde la pantalla de pago
